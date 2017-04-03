@@ -1,0 +1,164 @@
+
+
+
+<!-- 
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" name="email" ng-model="email" placeholder="Email" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" name="password" ng-model="password" placeholder="Password" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country" class="col-sm-3 control-label">Country</label>
+                    <div class="col-sm-9">
+                        <select name="country" ng-model="country" class="form-control">
+                            <option>India</option>
+                            <option>Australia</option>
+                            <option>Russia</option>
+                            <option>Denmark</option>
+                            <option>Ecuador</option>
+                            <option>Fiji</option>
+                            <option>Germany</option>
+                            <option>Brazil</option>
+                        </select>
+                        
+                    </div>
+                </div> 
+                
+               <center><input type = "file"  file-model = "myFile"></center><br><br>
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <button ng-click="register()" class="btn btn-primary btn-block">Register</button>
+                    </div>
+                </div>
+            </form>
+        </div> 
+        
+         -->
+        
+        
+        
+        <style>
+  body {
+    background-image: url('http://www.ringstedkajakklub.dk/wp-content/uploads/2012/12/LoginRed.jpg');
+    background-repeat: no-repeat;
+     background-size: 450px 550px;
+     background-attachment: fixed; 
+    background-position: 65% 80%;
+}
+
+<head>
+<style>
+input.ng-invalid.ng-dirty{border:0.5px solid red;}
+</style>
+
+
+<link rel="stylesheet" href="css/login.css" />
+
+<div class="container"  >
+  <div class="row">
+  <div class="col-md-4">
+      <div class="panel panel-default" >
+    <div class="panel-body">
+    
+	<div class="text-center"><h3> <b>Register Here</b></h3></div>
+	</br>
+	</br>
+	
+	
+    <form class="form-signin" name="signinForm"> 
+    {{message}}
+     <br>
+       <div class="form-group">
+   
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1"> <i class="glyphicon glyphicon-user"></i></span>
+ 
+      <input type="text" class="form-control" name="username" placeholder="Enter username" required="" autofocus=""  ng-model="username"/>           
+</div>
+<span ng-show="signinForm.username.$dirty && signinForm.username.$invalid"><center>*The username is required.</center></span>  
+  </div>
+  
+  <div class="form-group">
+   
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1"> <i class="glyphicon glyphicon-user"></i></span>
+ 
+      <input type="email" class="form-control" name="email" placeholder="Enter EmailId" required="" autofocus=""  ng-model="email"/>           
+</div>
+<span ng-show="signinForm.email.$dirty && signinForm.email.$invalid"><center>*The email is required.</center></span>
+     <span ng-show=" signinForm.email.$dirty && signinForm.email.$error.email"><center>not an email</center></span>
+  </div>
+  
+    <div class="form-group">
+   
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1"> <i class="glyphicon glyphicon-star fa-spin"></i></span>
+ 
+      <input type="password" class="form-control" name="password" placeholder="Password" required="" ng-model="password" ng-minlength="6" ng-maxlength="10"/>           
+
+       
+</div>
+<span ng-show="signinForm.password.$dirty && signinForm.password.$error.minlength">Too Short!</span>
+      <span ng-show="signinForm.password.$dirty && signinForm.password.$error.maxlength">Too Long!</span>
+       <span ng-show="signinForm.password.$dirty && signinForm.password.$invalid"><center>*The password is required.</center></span>
+  </div>
+  
+  
+   <div class="form-group">
+                   <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1"> <i class="glyphicon glyphicon-map-marker"></i></span>
+                    
+                        <select name="country" ng-model="country" class="form-control">
+                            <option>India</option>
+                            <option>Australia</option>
+                            <option>Russia</option>
+                            <option>Denmark</option>
+                            <option>Ecuador</option>
+                            <option>Fiji</option>
+                            <option>Germany</option>
+                            <option>Brazil</option>
+                        </select>
+                        
+                    </div>
+                    <span ng-show="signinForm.country.$dirty && signinForm.country.$invalid"><center>*The country is required.</center></span>
+                </div> 
+
+
+ <div class="form-group">
+   
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1"> <i class="glyphicon glyphicon-map-marker"></i></span>
+ 
+      <input type="file" class="form-control" name="file" placeholder="Upload photo"  required="" file-model = "myFile"/>       
+
+          
+</div>
+<span ng-show="signinForm.file.$dirty && signinForm.file.$invalid"><center>*The Image is required.</center></span>
+  </div> 
+ 
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> remember me
+    </label>
+  </div>
+  <button ng-disabled="signinForm.$invalid" type="submit" class=" btn btn-warning btn-md" ng-click="register() " >Register </button>  <a href="#">forget password</a><br>
+  </br>
+  
+  </br>
+  <center><p> do you have smiley account ?? <a href="#login">Login</a> </p></center>
+  </br>
+
+
+ </div>
+</div>
+  </div>
+  </div>

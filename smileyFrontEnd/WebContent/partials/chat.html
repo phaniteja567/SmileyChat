@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css" />
+    <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
+  <style>
+  .chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li.left .chat-body
+{
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body
+{
+    margin-right: 60px;
+}
+
+
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
+}
+
+.panel-body
+{
+    overflow-y: scroll;
+    height: 250px;
+}
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+ </style> 
+  
+  
+  </head>
+  <body ng-app="chat">
+    <div ng-controller="chatController" class="container">
+      <form ng-submit="addMessage()" name="messageForm">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="panel panel-primary">
+                <div class="panel-heading" id="accordion">
+                    <span class="glyphicon glyphicon-comment"></span> Chat
+                    <div class="btn-group pull-right">
+                        <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                    </div>
+                </div>
+            <div class="panel-collapse collapse" id="collapseOne">
+                <div class="panel-body">
+                    <ul class="chat">
+                        <li class="left clearfix"><span class="chat-img pull-left">
+                            
+                        </span>
+                            <div class="chat-body clearfix">
+                           
+                               <p ng-repeat="message in messages | orderBy:'time':true" class="message">
+        <time>{{message.time | date:'HH:mm'}}</time>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span ng-class="{self: message.self}">{{message.message}}</span>
+         <span ng-class="{self: username.self}">{{message.username}}</span>
+      </p>
+                            </div>
+                        </li>
+                       
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-sm" ng-model="message" placeholder="Type your message here..." />
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" id="btn-chat" ng-disabled="message.length > max || message.length === 0">
+                                Send</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+  
+  
+  
+        <!-- <input type="text" placeholder="Compose a new message..." ng-model="message" />
+        <div class="in">
+          <span class="count" ng-bind="max - message.length" ng-class="{danger: message.length > max}">140</span>
+          <button ng-disabled="message.length > max || message.length === 0">Send</button>
+        </div>
+      </form>
+      <hr />
+      <p ng-repeat="message in messages | orderBy:'time':true" class="message">
+        <time>{{message.time | date:'HH:mm'}}</time>
+        <span ng-class="{self: message.self}">{{message.message}}</span>
+         <span ng-class="{self: username.self}">{{message.username}}</span>
+      </p>
+    </div> -->
+    <script src="libs/sockjs/sockjs.min.js" type="text/javascript"></script>
+    <script src="libs/stomp-websocket/lib/stomp.min.js" type="text/javascript"></script>
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/lodash/dist/lodash.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>question id</th>
+				<th>question</th>
+				
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="foru in forums">
+				<td>{{foru.question_Id}}</td>
+                <td>{{foru.question_Name}}</td>
+				
+
+<td><button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#makecomment"  ng-click="makeComment(foru)">Comment</button></td>
+<td><button type="button" class="btn btn-primary btn-sm "data-toggle="modal" data-target="#commentslist" ng-click="commentsList(foru)">view comments</button></td> 
+
+			</tr>
+		</tbody>
+	</table>
+
+
+<!-- Modal -->
+   <div class="modal fade" id="makecomment" role="dialog">
+    <div class="modal-dialog">
+    
+     <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Comment</h4>
+        </div>
+        <div class="modal-body">
+         <form class="form-horizontal">
+        
+  	
+  
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="">Comment:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="comment" ng-model="comment">
+    </div>
+  </div>
+  
+  
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-success" ng-click="addComment()" >Save Comment</button>
+    </div>
+  </div>
+</form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+  </div>
+    </div>
+	
+    
+    
+     <!-- Modal -->
+	<div class="modal fade" id="commentslist" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">ALL COMMENTS</h4>
+				</div>
+				<div class="modal-body">
+				<table class="table table-striped">
+		<thead>
+			<tr>
+				
+				<th>Comment</th>
+				<th>PostedBy</th>
+				</tr>
+				</thead>
+			<tbody>
+			<tr ng-repeat=" com in commentlist">
+			    <td>{{com.comment}}</td>
+				<td>{{com.username}}</td>
+			
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="modal-footer"> <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+	</div></div>
+	</div>
+		
+	
+	
+	

@@ -1,0 +1,61 @@
+<div>
+    <hr>
+    <h2>Applications</h2>
+    <span class="clearfix"></span>
+    </hr>
+    <hr>
+    </hr>
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+      <th>Application id</th>
+      <th>UserName</th>
+        <th>registrationNumber</th>
+        <th>qualification</th>
+        <th>Date</th>
+         <th>contactNumber</th>
+         
+          <th>Approve</th>
+          <th>disApprove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="applications in applications">
+      <td>{{applications.id}}</td>
+      <td>{{applications.username}}</td>
+        <td>{{applications.registrationNumber}}</td>
+        <td>{{applications.qualification}}</td>
+        <td>{{applications.date}}</td>
+        <td>{{applications.contactNumber}}</td>
+         
+        <td><input type="checkbox" ng-disabled="krish"  ng-model="krish">Select</td>
+         <td><button type="button" ng-disabled="krish" class="btn btn-danger btn-sm " data-toggle="modal" data-target="#deleteapplications" ng-click="editApplications(applications)">Reject</button></td>
+      </tr>
+       </tbody>
+  </table>
+
+
+    
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="deleteapplications" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Delete Application</h4>
+        </div>
+        <div class="modal-body">
+         <strong >You are about to delete {{applicationsDataToEdit.id}} the applications Are you sure?</strong>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="deleteApplications(applicationsDataToEdit.id)">Yes</button>
+           <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+    </div>

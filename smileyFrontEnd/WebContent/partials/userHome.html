@@ -1,0 +1,620 @@
+
+
+<head>
+<style type="text/css">
+.mail-box {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.mail-box aside {
+    display: table-cell;
+    float: none;
+    height: 100%;
+    padding: 0;
+    vertical-align: top;
+}
+.mail-box .sm-side {
+    background: none repeat scroll 0 0 #e5e8ef;
+    border-radius: 4px 0 0 4px;
+    width: 25%;
+}
+.mail-box .lg-side {
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 0 4px 4px 0;
+    width: 75%;
+}
+.mail-box .sm-side .user-head {
+    background: none repeat scroll 0 0 #00a8b3;
+    border-radius: 4px 0 0;
+    color: #fff;
+    min-height: 80px;
+    padding: 10px;
+}
+.user-head .inbox-avatar {
+    float: left;
+    width: 65px;
+}
+.user-head .inbox-avatar img {
+    border-radius: 4px;
+}
+.user-head .user-name {
+    display: inline-block;
+    margin: 0 0 0 10px;
+}
+.user-head .user-name h5 {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+.user-head .user-name h5 a {
+    color: #fff;
+}
+.user-head .user-name span a {
+    color: #87e2e7;
+    font-size: 12px;
+}
+
+.inbox-body {
+    padding: 20px;
+}
+.btn-compose {
+    background: none repeat scroll 0 0 #ff6c60;
+    color: #fff;
+    padding: 12px 0;
+    text-align: center;
+    width: 100%;
+}
+.btn-compose:hover {
+    background: none repeat scroll 0 0 #f5675c;
+    color: #fff;
+}
+
+
+
+ul.labels-info li h4 {
+    color: #5c5c5e;
+    font-size: 13px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    text-transform: uppercase;
+}
+ul.labels-info li {
+    margin: 0;
+}
+ul.labels-info li a {
+    border-radius: 0;
+    color: #6a6a6a;
+}
+ul.labels-info li a:hover, ul.labels-info li a:focus {
+    background: none repeat scroll 0 0 #d5d7de;
+    color: #6a6a6a;
+}
+ul.labels-info li a i {
+    padding-right: 10px;
+}
+.nav.nav-pills.nav-stacked.labels-info p {
+    color: #9d9f9e;
+    font-size: 11px;
+    margin-bottom: 0;
+    padding: 0 22px;
+}
+.inbox-head {
+    background: none repeat scroll 0 0 #41cac0;
+    border-radius: 0 4px 0 0;
+    color: #fff;
+    min-height: 80px;
+    padding: 20px;
+}
+.inbox-head h3 {
+    display: inline-block;
+    font-weight: 300;
+    margin: 0;
+    padding-top: 6px;
+}
+.inbox-head .sr-input {
+    border: medium none;
+    border-radius: 4px 0 0 4px;
+    box-shadow: none;
+    color: #8a8a8a;
+    float: left;
+    height: 40px;
+    padding: 0 10px;
+}
+.inbox-head .sr-btn {
+    background: none repeat scroll 0 0 #00a6b2;
+    border: medium none;
+    border-radius: 0 4px 4px 0;
+    color: #fff;
+    height: 40px;
+    padding: 0 20px;
+}
+.table-inbox {
+    border: 1px solid #d3d3d3;
+    margin-bottom: 0;
+}
+.table-inbox tr td {
+    padding: 12px !important;
+}
+.table-inbox tr td:hover {
+    cursor: pointer;
+}
+.table-inbox tr td .fa-star.inbox-started, .table-inbox tr td .fa-star:hover {
+    color: #f78a09;
+}
+.table-inbox tr td .fa-star {
+    color: #d5d5d5;
+}
+.table-inbox tr.unread td {
+    background: none repeat scroll 0 0 #f7f7f7;
+    font-weight: 600;
+}
+ul.inbox-pagination {
+    float: right;
+}
+ul.inbox-pagination li {
+    float: left;
+}
+.mail-option {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.mail-option .chk-all, .mail-option .btn-group {
+    margin-right: 5px;
+}
+.mail-option .chk-all, .mail-option .btn-group a.btn {
+    background: none repeat scroll 0 0 #fcfcfc;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px !important;
+    color: #afafaf;
+    display: inline-block;
+    padding: 5px 10px;
+}
+.inbox-pagination a.np-btn {
+    background: none repeat scroll 0 0 #fcfcfc;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px !important;
+    color: #afafaf;
+    display: inline-block;
+    padding: 5px 15px;
+}
+.mail-option .chk-all input[type="checkbox"] {
+    margin-top: 0;
+}
+.mail-option .btn-group a.all {
+    border: medium none;
+    padding: 0;
+}
+.inbox-pagination a.np-btn {
+    margin-left: 5px;
+}
+.inbox-pagination li span {
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 7px;
+}
+.fileinput-button {
+    background: none repeat scroll 0 0 #eeeeee;
+    border: 1px solid #e6e6e6;
+}
+.inbox-body .modal .modal-body input, .inbox-body .modal .modal-body textarea {
+    border: 1px solid #e6e6e6;
+    box-shadow: none;
+}
+.btn-send, .btn-send:hover {
+    background: none repeat scroll 0 0 #00a8b3;
+    color: #fff;
+}
+.btn-send:hover {
+    background: none repeat scroll 0 0 #009da7;
+}
+.modal-header h4.modal-title {
+    font-family: "Open Sans",sans-serif;
+    font-weight: 300;
+}
+.modal-body label {
+    font-family: "Open Sans",sans-serif;
+    font-weight: 400;
+}
+.heading-inbox h4 {
+    border-bottom: 1px solid #ddd;
+    color: #444;
+    font-size: 18px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    }
+.online{
+ 	float: left;
+ 	
+ 	margin-top: 3%;
+ 	height: 10px;
+  width: 10px;
+  background-color: #0EE700;
+  border-radius: 500px;
+ }
+</style>
+</head>
+
+<div class="container">
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+ <div class="mail-box">
+                  <aside class="sm-side">
+                      <div class="user-head">
+                          <a class="inbox-avatar" href="javascript:;">
+                              <img  class="img-circle" width="64" hieght="60" src="images/users/{{uname}}.jpg" >
+                          </a>
+                          <div class="user-name">
+                              <h5>{{uname}}</h5>
+                              <span></span>
+                          </div>
+                          
+                      </div>
+                      <div class="inbox-body">
+                          <center>
+                          <button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#friends" ng-click="findfriends()">Find Friends</button>
+                          </center>
+                          <div class="modal fade" id="friends" role="dialog">
+		<div class="modal-dialog">
+
+			
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Find Friends</h4>
+				</div>
+				<div class="modal-body">
+				<table class="table table-striped">
+		<thead>
+		<tr>
+		<th>Users</th>
+		</tr></thead>
+		<tbody>
+			<tr ng-repeat=" user in friends">
+				<td>{{user.username}}</td>
+					<td><img class="img-responsive" src="images/users/{{user.username}}.jpg" alt="Chania" style= width:20%;height:10%></td>
+				
+<td><button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#addfriend" ng-click="addfriend(user)">Add Friend</button></td> 
+						
+						
+			
+				
+			</tr>
+		</tbody>
+	</table>
+				</div>
+			</div>
+			<div class="modal-footer">
+				
+			</div>
+		</div>
+	</div>                 
+	
+	
+	     <ul class="inbox-nav inbox-divider">
+                         
+                      </ul>
+                      <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
+                          
+                      </ul>
+                      <ul class="nav nav-pills nav-stacked labels-info ">
+                          <li> <h4>Buddy online</h4> </li>
+                          <li ng-repeat=" user in friendslist"> <a href="#chat"> <h class="online" ng-style="{
+                                'background-color': user.isOnline =='online' ? '#0EE700' :'red'
+                        }">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{user.friend_Name}}</h>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/users/{{user.friend_Name}}.jpg"class="img-circle" alt="Cinque Terre" width="30" height="30" > </a>  </li>
+                          
+                          </li>
+                      </ul>
+
+                      <div class="inbox-body text-center">
+                          <div class="btn-group">
+                              <a class="btn mini btn-primary" href="javascript:;">
+                                  <i class="fa fa-plus"></i>
+                              </a>
+                          </div>
+                          <div class="btn-group">
+                              <a class="btn mini btn-success" href="javascript:;">
+                                  <i class="fa fa-phone"></i>
+                              </a>
+                          </div>
+                          <div class="btn-group">
+                              <a class="btn mini btn-info" href="javascript:;">
+                                  <i class="fa fa-cog"></i>
+                              </a>
+                          </div>
+                      </div>
+
+                  </aside>
+                  <aside class="lg-side">
+                      <div class="inbox-head">
+                          <center><h3>New Jobs</h3></center>
+                          <form action="#" class="pull-right position">
+                              
+                          </form>
+                      </div>
+                      <div class="inbox-body">
+                         <div class="mail-option">
+                             <div class="chk-all">
+                                
+
+                             
+                          <table class="table table-inbox table-hover">
+                            <tbody>
+                              <tr ng-repeat="career in careers">
+                                  
+                                  <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                  <td ><b><h4>Id:</h3></b>{{career.job_Id}}</td>
+                                  <td ><b><h4>Role:</h3></b>{{career.job_Role}}</td>
+                                  <td ><b><h4>Description:</h4></b>{{career.job_Description}}</td>
+                                  <td><b><h4>eligibility:</h4></b>{{career.eligibility}}</td>
+                                 <br><td><button type="button" class="btn btn-primary btn-sm "  data-toggle="modal" data-target="#applyJob">Apply</button></td>
+                              </tr>
+                             
+                          </tbody>
+                          </table>
+                      </div>
+                  </aside>
+              </div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal left fade" id="applyJob" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Apply for this Job</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal">
+          
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="registrationNumber">Registration Number:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="registrationNumber" placeholder="Enter Registration Number" ng-model="registrationNumber" required="required">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="qualification">qualification</label>
+    <div class="col-sm-10"> 
+      <input type="text" class="form-control" id="qualification" placeholder="Enter qualification" ng-model="qualification" required="required">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="contactNumber">contact Number</label>
+    <div class="col-sm-10"> 
+      <input type="text" class="form-control" id="contactNumber" placeholder="Enter contactNumber" ng-model="contactNumber" required="required">
+    </div>
+  </div>
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary btn-lg" ng-click="applyJob()" data-toggle="modal" data-target="#jobAppConfirmation">Apply for this job</button>
+    </div>
+  </div>
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+  <div class="modal right fade" id="jobAppConfirmation" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Job Application Status</h4>
+        </div>
+        <div class="modal-body">
+       <h1>You have successfully applied for this job. We will get back to you shortly</h1>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <head>
+<style>
+/* USER PROFILE PAGE */
+ .card {
+    margin-top: 20px;
+    padding: 30px;
+    background-color: rgba(214, 224, 226, 0.2);
+    -webkit-border-top-left-radius:5px;
+    -moz-border-top-left-radius:5px;
+    border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-top-right-radius:5px;
+    border-top-right-radius:5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.card.hovercard {
+    position: relative;
+    padding-top: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 1);
+}
+.card.hovercard .card-background {
+    height: 130px;
+}
+.card-background img {
+    -webkit-filter: blur(25px);
+    -moz-filter: blur(25px);
+    -o-filter: blur(25px);
+    -ms-filter: blur(25px);
+    filter: blur(25px);
+    margin-left: -100px;
+    margin-top: -200px;
+    min-width: 130%;
+}
+.card.hovercard .useravatar {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+}
+.card.hovercard .useravatar img {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+}
+.card.hovercard .card-info {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+}
+.card.hovercard .card-info .card-title {
+    padding:0 5px;
+    font-size: 20px;
+    line-height: 1;
+    color: #262626;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.card.hovercard .card-info {
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 20px;
+    color: #737373;
+    text-overflow: ellipsis;
+}
+.card.hovercard .bottom {
+    padding: 0 20px;
+    margin-bottom: 17px;
+}
+.btn-pref .btn {
+    -webkit-border-radius:0 !important;
+}
+
+ .online{
+ 	float: left;
+ 	
+ 	margin-top: 3%;
+ 	height: 1px;
+  width: 1px;
+  background-color: #0EE700;
+  border-radius: 100px;
+ }
+</style>
+</head>
+<center>
+<div class="col-lg-6 col-sm-6">
+    <div class="card hovercard">
+        <div class="card-background">
+            <img class="card-bkimg" alt="" src="images/users/{{uname}}.jpg">
+            http://lorempixel.com/850/280/people/9/
+        </div>
+        <div class="useravatar">
+            <img alt="" src="images/users/{{uname}}.jpg">
+        </div>
+        <div class="card-info"> <span class="card-title">{{uname}}</span>
+
+        </div>
+    </div>
+ <button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#friends" ng-click="findfriends()">Find Friends</button>
+    
+<center><h4><b>Friends List</h4></b></center>
+<div class="modal-body">
+	<table class="table ">
+		
+		<tbody>
+			<tr ng-repeat=" user in friendslist">
+			
+			
+			
+				<td class="online" ng-style="{
+                                'background-color': user.isOnline =='online' ? '#0EE700' :'red'
+                        }">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{user.friend_Name}}</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/users/{{user.friend_Name}}.jpg"class="img-circle" alt="Cinque Terre" width="50" height="50" >
+			</td>
+			<td><a href="#chat">Chat</a>
+			</tr>
+		</tbody>
+	</table>
+    
+    
+
+
+	
+	<div class="modal fade" id="friends" role="dialog">
+		<div class="modal-dialog">
+
+			
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Find Friends</h4>
+				</div>
+				<div class="modal-body">
+				<table class="table table-striped">
+		<thead>
+		<tr>
+		<th>Users</th>
+		</tr></thead>
+		<tbody>
+			<tr ng-repeat=" user in friends">
+				<td>{{user.username}}</td>
+					<td><img class="img-responsive" src="images/users/{{user.username}}.jpg" alt="Chania" style= width:20%;height:10%></td>
+				
+<td><button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#addfriend" ng-click="addfriend(user)">Add Friend</button></td> 
+						
+						
+			
+				
+			</tr>
+		</tbody>
+	</table>
+				</div>
+			</div>
+			<div class="modal-footer">
+				
+			</div>
+		</div>
+	</div>
+
+</center>
+ -->

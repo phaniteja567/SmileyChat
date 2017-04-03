@@ -1,0 +1,80 @@
+
+<style>
+input.ng-invalid.ng-dirty{border:0.5px solid red;}
+</style>
+<style>
+  body {
+    background-image: url('http://ablsms.com/img/login_icon.jpg');
+    background-repeat: no-repeat;
+     background-size: 400px 450px;
+     background-attachment: fixed; 
+    background-position: 65% 80%;
+}
+</style>
+
+
+
+<link rel="stylesheet" href="css/login.css" />
+<script src="js/validations.js"></script>
+<div class="container"  >
+  <div class="row">
+  <div class="col-md-4">
+      <div class="panel panel-default" >
+    <div class="panel-body">
+    
+	<div class="text-center"><h3> <b>Login</b></h3></div>
+	</br>
+	</br>
+	
+	
+    <form class="form-signin" name="loginForm">
+    {{message}}
+     
+  <div class="form-group">
+   
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1"> <i class="glyphicon glyphicon-user"></i></span>
+ 
+      <input type="text" class="form-control" name="username" placeholder="Enter UserName"  autofocus=""  ng-model="username" required/>           
+
+</div>
+<span ng-show="loginForm.username.$dirty && loginForm.username.$invalid"><center>*The email is required.</center></span>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1"> <i class="glyphicon glyphicon-star fa-spin"></i></span>
+  <input type="password" class="form-control" name="password" placeholder="Password" ng-model="password"/>
+
+</div>
+<span ng-show="loginForm.password.$dirty && loginForm.password.$invalid"><center>*The password is required.</center></span>
+</div>
+ 
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> remember me
+    </label>
+  </div>
+  <button ng-disabled="loginForm.$invalid" type="submit" class=" btn btn-warning btn-md" ng-click="login()" onsubmit="return validateForm()" >Login </button>  <a href="#">forget password</a><br>
+  </br>
+  
+  </br>
+  <center><p> new to smiley  ?? <a href="#register">sign up</a> </p></center>
+  </br>
+
+
+ </div>
+</div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+               
+                
+
+               
